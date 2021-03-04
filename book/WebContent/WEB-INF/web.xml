@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+        http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+
+	<welcome-file-list>
+		<welcome-file>LoginUser.jsp</welcome-file>
+	</welcome-file-list>
+
+
+
+
+	<display-name>Books Management Web Application</display-name>
+
+	<context-param>
+		<param-name>jdbcURL</param-name>
+		<param-value>jdbc:mysql://localhost:3306/demo</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>jdbcUsername</param-name>
+		<param-value>root</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>jdbcPassword</param-name>
+		<param-value>root</param-value>
+	</context-param>
+
+	<servlet> <servlet-name>UserControllerServlet</servlet-name> <servlet-class> 
+		com.user.controller.UserControllerServlet </servlet-class> </servlet> <servlet-mapping> 
+		<servlet-name>UserControllerServlet</servlet-name> <url-pattern>/BookControllerServlet</url-pattern> 
+		</servlet-mapping>
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/Error.jsp</location>
+	</error-page>
+</web-app>
